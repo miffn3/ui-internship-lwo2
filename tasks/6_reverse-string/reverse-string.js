@@ -1,5 +1,5 @@
 export function reverseString(str) {
-  let arr = str.split('');
+  const arr = str.split('');
   arr.reverse();
   return arr.join('');
 }

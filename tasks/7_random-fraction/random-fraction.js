@@ -1,5 +1,3 @@
 export function randomFraction() {
-  let a = Math.random();
-  let b = Math.random();
-  return a / b;
+  return Number(Math.random().toFixed(1));
 }

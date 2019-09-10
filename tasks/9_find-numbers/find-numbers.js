@@ -1,7 +1,7 @@
 export function getNumbers(str) {
-  let regex = /\d+/g;
-  let stringDigits = str.match(regex);
-  let digits = [];
+  const regex = /\d+/g;
+  const stringDigits = str.match(regex);
+  const digits = [];
   for (let i = 0; i < stringDigits.length; i++) {
     digits.push(+stringDigits[i]);
   }

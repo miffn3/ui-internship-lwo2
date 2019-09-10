@@ -27,7 +27,7 @@ const contacts = [
 
 export function lookupProfile(firstName, prop) {
   for (let i = 0; i < contacts.length; i++) {
-    if (contacts[i].firstName == firstName) {
+    if (contacts[i].firstName === firstName) {
       if (contacts[i][prop] !== undefined) {
         return contacts[i][prop];
       } else {
