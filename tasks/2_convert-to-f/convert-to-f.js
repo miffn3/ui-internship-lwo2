@@ -1,6 +1,4 @@
 export function convertToF(celsius) {
-  var fahrenheit;
-  fahrenheit = celsius * 9 / 5;
-  fahrenheit +=32;
+  const fahrenheit = celsius * 9 / 5 + 32;
   return fahrenheit;
 }
