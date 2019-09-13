@@ -9,5 +9,4 @@ export function maxTripletSum(arr, n = 3) {
     sum += set[i];
   }
   return sum;
-
 }

@@ -1,15 +1,11 @@
 export function arrayLeaders(arr) {
   const result = [];
-  const n = arr.length;
-  for (let i = 0; i < n - 1; i++) {
-    let current = arr.shift();
-    if (current > arr.reduce((acc, cur) => acc + cur)) {
-      result.push(current);
+  let sum = arr.reduce((acc, cur) => acc + cur);
+  for (let i = 0; i < arr.length; i++) {
+    sum -= arr[i];
+    if (arr[i] > sum) {
+      result.push(arr[i]);
     }
-  }
-  const last = arr.shift();
-  if (last > 0) {
-    result.push(last);
   }
   return result;
 }
