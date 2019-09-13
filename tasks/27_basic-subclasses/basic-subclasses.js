@@ -1,6 +1,11 @@
+const sex = {
+  male: 'male',
+  female: 'female',
+};
+
 export class God {
   static create() {
-    return [new Man, new Woman];
+    return [new Man('Adam'), new Woman('Eve')];
   }
 }
 
@@ -12,13 +17,13 @@ export class Human {
 }
 
 export class Man extends Human {
-  constructor() {
-    super('male', 'Adam');
+  constructor(name) {
+    super(sex.male, name);
   }
 }
 
 export class Woman extends Human {
-  constructor() {
-    super('female', 'Eve');
+  constructor(name) {
+    super(sex.female, name);
   }
 }

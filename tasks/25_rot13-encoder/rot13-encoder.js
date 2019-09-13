@@ -3,7 +3,8 @@ export function rot13Encoder(str) {
   const regex = /[A-Z]/;
   for (let i = 0; i < str.length; i++) {
     if (str[i].match(regex)) {
-      encodeMessage.push(String.fromCharCode(str.charCodeAt(i) % 26 + 65));
+      const offsetLetter = String.fromCharCode(str.charCodeAt(i) % 26 + 65);
+      encodeMessage.push(offsetLetter);
     } else {
       encodeMessage.push(str[i]);
     }
