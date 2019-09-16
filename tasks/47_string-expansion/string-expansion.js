@@ -1,10 +1,12 @@
 export function stringExpansion(str) {
   let n = 1;
-  return Array.from(str).reduce((acc, cur, index) => {
-    if (cur.toString().match(/\d/)) {
-      n = cur;
-      return acc;
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].match(/\d/)) {
+      n = Number(str[i]);
+    } else {
+      result = result.concat(str[i].repeat(n));
     }
-    return acc.concat(cur.toString().repeat(n));
-  }, '');
+  }
+  return result;
 }

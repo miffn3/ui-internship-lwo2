@@ -1,4 +1,4 @@
-const sortCoutries = (a, b) => {
+const sortCountries = (a, b) => {
   if (a[1] === b[0]) {
     return -1;
   }
@@ -9,7 +9,7 @@ const sortCoutries = (a, b) => {
 };
 
 export function followTheSpy(routes) {
-  return routes.sort(sortCoutries).reduce((acc, cur, index) => {
+  return routes.sort(sortCountries).reduce((acc, cur, index) => {
     if (index === 0) {
       return acc.concat(cur[0] + ', ' + cur[1] + ', ');
     }

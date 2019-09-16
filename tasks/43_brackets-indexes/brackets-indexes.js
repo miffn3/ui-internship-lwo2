@@ -7,7 +7,8 @@ export function findCloseIndex(str, num) {
     if (str[i] === '(') {
       count++;
     } else if (str[i] === ')') {
-      if (--count === 0) {
+      count--;
+      if (count === 0) {
         return i;
       }
     }

@@ -1,6 +1,6 @@
 export function firstNSmallest(arr, n) {
   let count = 0;
-  let lastMin = arr.reduce((last) => {
+  const lastMin = arr.reduce((last) => {
     if (count >= n) {
       return last;
     }

@@ -1,12 +1,12 @@
 export function findEqualIndex(arr) {
   let leftSum = 0;
   let rightSum = arr.reduce((acc, cur) => acc + cur);
-  return arr.reduce((acc, cur, index) => {
-    rightSum -= cur;
-    if (leftSum === rightSum && acc === -1) {
-      return index;
+  for (let i = 0; i < arr.length; i++) {
+    rightSum -= arr[i];
+    if (leftSum === rightSum) {
+      return i;
     }
-    leftSum += cur;
-    return acc;
-  }, -1);
+    leftSum += arr[i];
+  }
+  return -1;
 }
