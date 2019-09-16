@@ -1,17 +1,21 @@
-export function minNumberToPrime(arr) {
-  const sum = arr.reduce((acc, cur) => acc + cur);
-  let closestPrime = sum;
-  for (let i = sum; i < 2 * sum; i++) {
-    let isPrime = true;
-    for (let j = 2; j < Math.sqrt(sum); j ++) {
-      if (i % j === 0) {
-        isPrime = false;
-      }
-    }
-    if (isPrime) {
-      closestPrime = i;
+function isPrimeNumber(num) {
+  let isPrime = true;
+  const n = Math.sqrt(num);
+  for (let j = 2; j < n; j++) {
+    if (num % j === 0) {
+      isPrime = false;
       break;
     }
   }
-  return closestPrime - sum;
+  return isPrime;
+}
+
+export function minNumberToPrime(arr) {
+  const sum = arr.reduce((acc, cur) => acc + cur);
+  const n = 2 * sum;
+  for (let i = sum; i < n; i++) {
+    if (isPrimeNumber(i)) {
+      return i - sum;
+    }
+  }
 }
