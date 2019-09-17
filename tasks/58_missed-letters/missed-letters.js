@@ -1,6 +1,6 @@
 /**
  * findLetter - Find the missing letter in the passed
- *  letter range and return it.
+ * letter range and return it.
  *
  * @example
  * //return 'd'

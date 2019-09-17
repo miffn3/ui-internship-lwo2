@@ -1,6 +1,6 @@
 /**
  * myReplace - Perform a search and replace on the sentence
- *  using the arguments provided and return the new sentence.
+ * using the arguments provided and return the new sentence.
  *
  * @example
  * //return 'Let us go to the mall'

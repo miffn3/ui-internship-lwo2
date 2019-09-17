@@ -1,5 +1,5 @@
 /**
- * sumAll - Sums of numbers and all numbers in the range.
+ * sumAll - Sums up all numbers in the given range.
  *
  * @example
  * //return 10

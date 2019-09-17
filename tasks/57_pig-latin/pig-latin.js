@@ -2,7 +2,7 @@
  * translatePigLatin - Translate the provided string to pig latin.
  *
  * @example
- * //return 'aliforniacay'
+ * //return aliforniacay
  * translatePigLatin("california");
  * @param {String} str - sorce string.
  * @return {String} new string after translating.

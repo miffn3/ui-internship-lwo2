@@ -1,6 +1,6 @@
 /**
  * whatIsInAName - Performs search for objects with matching properties-value
- *  pairs with source object in collection and return array of them.
+ * pairs with source object in collection and return array of them.
  *
  * @example
  * //return [{ "a": 1, "b": 2 }]

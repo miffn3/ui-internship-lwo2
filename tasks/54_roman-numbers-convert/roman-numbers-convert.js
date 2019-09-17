@@ -1,5 +1,5 @@
 /**
-* convertToRoman - Converts number to roman numeral.
+* convertToRoman - Converts number from arabic numeral to roman numeral.
 *
 * @example
 * //return 'II'

@@ -1,5 +1,6 @@
 /**
- * diffArray - Compairs teo arrays and returns symmetric difference of them.
+ * diffArray - Compare two arrays and return a new array with any items only
+ * found in one of the two given arrays, but not both.
  *
  * @example
  * //return ["piglet",4]
