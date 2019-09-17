@@ -1,3 +1,12 @@
+/**
+* convertToRoman - Converts number to roman numeral.
+*
+* @example
+* //return 'II'
+* convertToRoman(2)
+* @param {Number} num - number in arabic style.
+* @return {String} equivalent in roman numeral of num.
+*/
 export function convertToRoman(num) {
   return Array.from(num.toString()).reduce((acc, cur, index, array) => {
     if (index < array - 3 && array.length > 3) {

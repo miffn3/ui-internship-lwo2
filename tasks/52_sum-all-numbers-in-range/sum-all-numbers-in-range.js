@@ -1,3 +1,12 @@
+/**
+ * sumAll - Sums of numbers and all numbers in the range.
+ *
+ * @example
+ * //return 10
+ * sumAll([1, 4]);
+ * @param {Array<Number>} arr - range of numbers to sum.
+ * @return {Number} sum of all numbers in the range.
+ */
 export function sumAll(arr) {
   const from = Math.min(...arr);
   const to = Math.max(...arr);
