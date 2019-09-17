@@ -1,5 +1,5 @@
 export function maxProduct(arr) {
-  let mults = [];
+  const mults = [];
   for (let i = 0; i < arr.length - 1; i++) {
     mults.push(arr[i] * arr[i + 1]);
   }

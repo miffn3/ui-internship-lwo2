@@ -1,4 +1,4 @@
 export function uniqueInOrder(str) {
-  const letters = Array.from(str);
-  return letters.filter((el, index, letters) => el !== letters[index - 1]);
+  return Array.from(str)
+      .filter((el, index, letters) => el !== letters[index - 1]);
 }
