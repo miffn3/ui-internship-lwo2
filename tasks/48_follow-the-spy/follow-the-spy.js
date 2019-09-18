@@ -9,13 +9,14 @@ const sortCountries = (a, b) => {
 };
 
 export function followTheSpy(routes) {
-  return routes.sort(sortCountries).reduce((acc, cur, index) => {
+  const countries = routes.sort(sortCountries);
+  return countries.reduce((acc, cur, index) => {
     if (index === 0) {
-      return acc.concat(cur[0] + ', ' + cur[1] + ', ');
+      return acc + cur[0] + ', ' + cur[1] + ', ';
     }
     if (index === routes.length - 1) {
-      return acc.concat(cur[1]);
+      return acc+ cur[1];
     }
-    return acc.concat(cur[1] + ', ');
+    return acc+ cur[1] + ', ';
   }, '');
 }
