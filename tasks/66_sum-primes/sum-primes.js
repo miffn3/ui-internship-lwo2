@@ -5,8 +5,8 @@
  * @example
  * //return 17
  * sumPrimes(10);
- * @param {Number} num - number that limiting range of searching.
- * @return {Number} sum of prime numbers
+ * @param {Number} num - number which limiting range of searching.
+ * @return {Number} sum of prime numbers.
  */
 export function sumPrimes(num) {
   const primes = [];
@@ -18,6 +18,15 @@ export function sumPrimes(num) {
   return primes.reduce((acc, cur) => acc + cur);
 }
 
+/**
+ * isPrimeNumber - Checks that number is prime or not.
+ *
+ * @example
+ * //return true
+ * isPrimeNumber(5);
+ * @param {Number} num - number provided to check.
+ * @return {Boolean}
+ */
 function isPrimeNumber(num) {
   let isPrime = true;
   const n = Math.sqrt(num);

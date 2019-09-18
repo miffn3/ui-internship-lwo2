@@ -6,7 +6,7 @@
  * //return 1785
  * sumFibs(1000);
  * @param {Number} num - number which limiting odd fibonacci numbers.
- * @return {Number} - sum of all odd Fibonnaci numbers before given number.
+ * @return {Number} sum of all odd Fibonnaci numbers before given number.
  */
 export function sumFibs(num) {
   const fib = [1, 1];

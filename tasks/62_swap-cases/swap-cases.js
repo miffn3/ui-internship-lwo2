@@ -4,8 +4,8 @@
  * @example
  * //return 'hELLO wORLD'
  * swapCases('Hello World');
- * @param {String} str
- * @return {String} - new string with swapped letters cases.
+ * @param {String} str - source sentence.
+ * @return {String} new string with swapped letters cases.
  */
 export function swapCases(str) {
   let result = '';

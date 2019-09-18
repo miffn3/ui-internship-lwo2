@@ -9,7 +9,7 @@
  * @param {String} insertable - string to insert.
  * @param {Number} position - position where to insert insertable
  * string (position = 0 by default).
- * @return {String} - new sentence with inserted string.
+ * @return {String} new sentence with inserted string.
  */
 export function insert(str, insertable, position = 0) {
   if (insertable) {

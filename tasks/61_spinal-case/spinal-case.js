@@ -5,7 +5,7 @@
  * //return this-is-spinal-tap'
  * spinalCase("This Is Spinal Tap")
  * @param {String} str - source string in any case.
- * @return {String} - new string converted to spinal case.
+ * @return {String} new string converted to spinal case.
  */
 export function spinalCase(str) {
   const letters = Array.from(str);

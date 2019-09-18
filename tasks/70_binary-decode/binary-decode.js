@@ -6,7 +6,7 @@
  * //return Real
  * binaryDecode('01010010 01100101 01100001 01101100');
  * @param {String} str - space separated binary string.
- * @return {String} trnaslated English sentence.
+ * @return {String} translated English sentence.
  */
 export function binaryDecode(str) {
   if (!str) {
