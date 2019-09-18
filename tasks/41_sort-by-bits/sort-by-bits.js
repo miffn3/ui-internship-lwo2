@@ -11,12 +11,7 @@ const sorting = function(a, b) {
   if (aNum === bNum) {
     return a - b;
   }
-  if (aNum < bNum) {
-    return -1;
-  }
-  if (aNum > bNum) {
-    return 1;
-  }
+  return aNum - bNum;
 };
 
 export function sortByBits(arr) {
