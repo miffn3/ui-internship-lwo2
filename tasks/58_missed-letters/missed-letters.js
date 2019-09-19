@@ -6,7 +6,7 @@
  * //return 'd'
  * findLetter("abce");
  * @param {String} str - letter range.
- * @return {String} missing letter.
+ * @return {*} missing letter or undefined, if it hasn't founded.
  */
 export function findLetter(str) {
   let lastIndex = str.charCodeAt(0);

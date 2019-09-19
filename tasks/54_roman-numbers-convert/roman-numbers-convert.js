@@ -8,36 +8,32 @@
 * @return {String} equivalent in roman numeral of num.
 */
 export function convertToRoman(num) {
-  return Array.from(num.toString()).reduce((acc, cur, index, array) => {
-    if (index < array - 3 && array.length > 3) {
-      return acc + 'M';
-    }
-    if (index === array.length - 3 && cur) {
-      if (cur === '4') {
-        return acc + 'CD';
-      }
-      if (cur === '9') {
-        return acc + 'CM';
-      }
-      return acc + 'D'.repeat(cur / 5) + 'C'.repeat(cur % 5);
-    }
-    if (index === array.length - 2) {
-      if (cur === '4') {
-        return acc + 'XL';
-      }
-      if (cur === '9') {
-        return acc + 'XC';
-      }
-      return acc + 'L'.repeat(cur / 5) + 'X'.repeat(cur % 5);
-    }
-    if (index === array.length - 1) {
-      if (cur === '4') {
-        return acc + 'IV';
-      }
-      if (cur === '9') {
-        return acc + 'IX';
-      }
-      return acc + 'V'.repeat(cur / 5) + 'I'.repeat(cur % 5);
-    }
-  }, '');
+  let romanNumber = '';
+  const thousands = Math.floor(num / 1000);
+  const hundreds = Math.floor(num % 1000 / 100);
+  const tens = Math.floor(num % 1000 / 10 % 10);
+  const ones = Math.floor(num % 10);
+  romanNumber += 'M'.repeat(thousands);
+  if (hundreds === 4) {
+    romanNumber += 'CD';
+  } else if (hundreds === 9) {
+    romanNumber += 'CM';
+  } else {
+    romanNumber += 'D'.repeat(hundreds / 5) + 'C'.repeat(hundreds % 5);
+  }
+  if (tens === 4) {
+    romanNumber += 'XL';
+  } else if (tens === 9) {
+    romanNumber += 'XC';
+  } else {
+    romanNumber += 'L'.repeat(tens / 5) + 'X'.repeat(tens % 5);
+  }
+  if (ones === 4) {
+    romanNumber += 'IV';
+  } else if (ones === 9) {
+    romanNumber += 'IX';
+  } else {
+    romanNumber += 'V'.repeat(ones / 5) + 'I'.repeat(ones % 5);
+  }
+  return romanNumber;
 }

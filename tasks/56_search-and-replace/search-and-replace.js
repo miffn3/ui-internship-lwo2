@@ -5,19 +5,19 @@
  * @example
  * //return 'Let us go to the mall'
  * myReplace("Let us go to the store", "store", "mall");
- * @param {String} str - source sentence.
- * @param {String} before - sentence to perform the search and replace on.
- * @param {String} after - sentence to replace.
+ * @param {String} source - source sentence.
+ * @param {String} searchValue - sentence to perform the search and replace on.
+ * @param {String} replacer - sentence to replace.
  * @return {String} new sentence after replacing.
  */
-export function myReplace(str, before, after) {
-  const newStr = [];
-  for (let i = 0; i < after.length; i++) {
-    if (before[i] && before[i] === before[i].toUpperCase()) {
-      newStr.push(after[i].toUpperCase());
+export function myReplace(source, searchValue, replacer) {
+  const words = [];
+  for (let i = 0; i < replacer.length; i++) {
+    if (searchValue[i] && searchValue[i] === searchValue[i].toUpperCase()) {
+      words.push(replacer[i].toUpperCase());
     } else {
-      newStr.push(after[i]);
+      words.push(replacer[i]);
     }
   }
-  return str.replace(before, newStr.join(''));
+  return source.replace(searchValue, words.join(''));
 }
