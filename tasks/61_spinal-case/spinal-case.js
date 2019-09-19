@@ -8,23 +8,25 @@
  * @return {String} new string converted to spinal case.
  */
 export function spinalCase(str) {
-  const letters = Array.from(str);
-  const result = [];
-  const separators = [' ', '_', '-'];
-  let word = letters[0].toLowerCase();
-  for (let i = 1; i < letters.length; i++) {
-    if (separators.indexOf(letters[i]) !== -1) {
-      result.push(word);
-      word = '';
-    } else if (letters[i] === letters[i].toUpperCase()) {
-      if (word) {
-        result.push(word);
-      }
-      word = letters[i].toLowerCase();
-    } else {
-      word += letters[i];
-    }
+  const separators = /([-_\s])/g;
+  return str.replace(separators, '-').replace(/[A-Z]/g, upperToHyphenLower);
+}
+
+/**
+ * upperToHyphenLower - Replace source character to its lower case wih hyphen.
+ *
+ * @example
+ * //return -a
+ * upperToHyphenLower('A', 1, 'dAte')
+ * @param {String} match - source character.
+ * @param {Number} offset - character index.
+ * @param {String} string - sentence where source character placed.
+ * @return {String}
+ */
+function upperToHyphenLower(match, offset, string) {
+  let result = '';
+  if (offset > 0 && string[offset - 1] !== '-') {
+    result += '-';
   }
-  result.push(word);
-  return result.join('-');
+  return result + match.toLowerCase();
 }
