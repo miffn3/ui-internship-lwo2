@@ -5,7 +5,7 @@
  * //return 30
  * numPrimoral(3);
  * @param {Number} num - provided number.
- * @return {Number} primoral of a number. 
+ * @return {Number} primoral of a number.
  */
 export function numPrimorial(num) {
   let count = 0;
