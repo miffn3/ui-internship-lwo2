@@ -4,11 +4,11 @@
  * @example
  * //return ["a","b"]
  * unpackArray([[["a"]], [["b"]]]);
- * @param {Array<*>} arr - nested array.
+ * @param {Array<*>} array - nested array.
  * @return {Array<*>} flat array.
  */
-export function unpackArray(arr) {
-  const stack = [...arr];
+export function unpackArray(array) {
+  const stack = [...array];
   const result = [];
   while (stack.length) {
     const next = stack.pop();

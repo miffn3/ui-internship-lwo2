@@ -5,14 +5,14 @@
  * @example
  * //return [3, 4]
  * dropElements([1, 2, 3, 4], function(n) {return n >= 3;});
- * @param {Array<*>} arr - source array.
- * @param {Function} func - executes on each element.
+ * @param {Array<*>} array - source array.
+ * @param {Function} filter - executes on each element.
  * @return {Array<*>} new array after filtering.
  */
-export function dropElements(arr, func) {
-  const copy = arr.slice();
+export function dropElements(array, filter) {
+  const copy = array.slice();
   for (let i = 0; i < copy.length; i++) {
-    if (func(copy[0])) {
+    if (filter(copy[0])) {
       break;
     }
     copy.shift();

@@ -5,15 +5,18 @@
  * @example
  * //return 'JavaScript We are doing some exercises.'
  * insert('We are doing some exercises.','JavaScript ')
- * @param {String} str - source sentence.
+ * @param {String} sentenceWhereInsert - source sentence.
  * @param {String} insertable - string to insert.
  * @param {Number} position - position where to insert insertable
  * string (position = 0 by default).
  * @return {String} new sentence with inserted string.
  */
-export function insert(str, insertable, position = 0) {
+export function insert(sentenceWhereInsert, insertable, position = 0) {
   if (insertable) {
-    return str.slice(0, position) + insertable + str.slice(position);
+    let result = sentenceWhereInsert.slice(0, position);
+    result += insertable;
+    result += sentenceWhereInsert.slice(position);
+    return result;
   }
-  return str;
+  return sentenceWhereInsert;
 }

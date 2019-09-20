@@ -5,12 +5,12 @@
  * @example
  * //return 17
  * sumPrimes(10);
- * @param {Number} num - number which limiting range of searching.
+ * @param {Number} limit - number which limiting range of searching.
  * @return {Number} sum of prime numbers.
  */
-export function sumPrimes(num) {
+export function sumPrimes(limit) {
   const primes = [];
-  for (let i = 2; i <= num; i++) {
+  for (let i = 2; i <= limit; i++) {
     if (isPrimeNumber(i)) {
       primes.push(i);
     }
@@ -24,14 +24,14 @@ export function sumPrimes(num) {
  * @example
  * //return true
  * isPrimeNumber(5);
- * @param {Number} num - number provided to check.
+ * @param {Number} number - number provided to check.
  * @return {Boolean}
  */
-function isPrimeNumber(num) {
+function isPrimeNumber(number) {
   let isPrime = true;
-  const n = Math.sqrt(num);
+  const n = Math.sqrt(number);
   for (let j = 2; j <= n; j++) {
-    if (num % j === 0) {
+    if (number % j === 0) {
       isPrime = false;
       break;
     }

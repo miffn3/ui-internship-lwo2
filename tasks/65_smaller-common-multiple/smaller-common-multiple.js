@@ -5,12 +5,12 @@
  * @example
  * //return 60
  * smallestCommons([1, 5]);
- * @param {Array<Number>} arr - range of numbers
+ * @param {Array<Number>} range - range of numbers
  * @return {Number} - least common multiple
  */
-export function smallestCommons(arr) {
-  const from = Math.min(...arr);
-  const to = Math.max(...arr);
+export function smallestCommons(range) {
+  const from = Math.min(...range);
+  const to = Math.max(...range);
   let biggestNumberMultiple = to;
   let maxCommon = 1;
   for (let i = from; i <= to; i++) {

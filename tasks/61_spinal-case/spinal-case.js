@@ -4,12 +4,13 @@
  * @example
  * //return this-is-spinal-tap'
  * spinalCase("This Is Spinal Tap")
- * @param {String} str - source string in any case.
+ * @param {String} anyToSpinal - source string in any case.
  * @return {String} new string converted to spinal case.
  */
-export function spinalCase(str) {
+export function spinalCase(anyToSpinal) {
   const separators = /([-_\s])/g;
-  return str.replace(separators, '-').replace(/[A-Z]/g, upperToHyphenLower);
+  return anyToSpinal.replace(separators, '-')
+      .replace(/[A-Z]/g, upperToHyphenLower);
 }
 
 /**
