@@ -5,26 +5,20 @@
  * @example
  * //return TAACG
  * DNAStrand("ATTGC");
- * @param {String} str - sequence of DNAs.
+ * @param {String} sequence - sequence of DNAs.
  * @return {String} sequence of complementary sides.
  */
-export function DNAStrand(str) {
+export function DNAStrand(sequence) {
   let result = '';
-  for (let i = 0; i < str.length; i++) {
-    switch (str[i]) {
-      case ('C'):
-        result += 'G';
-        break;
-      case ('G'):
-        result += 'C';
-        break;
-      case ('A'):
-        result += 'T';
-        break;
-      case ('T'):
-        result += 'A';
-        break;
-    }
+  for (let i = 0; i < sequence.length; i++) {
+    result += dictionary[sequence[i]];
   }
   return result;
 }
+
+const dictionary = {
+  'C': 'G',
+  'G': 'C',
+  'A': 'T',
+  'T': 'A',
+};

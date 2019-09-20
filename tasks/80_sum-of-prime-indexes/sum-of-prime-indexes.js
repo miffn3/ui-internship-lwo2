@@ -5,14 +5,14 @@
  * @example
  * //return 7
  * sumPrimeIndexedElements([1, 2, 3, 4]);
- * @param {Array<Number>} arr - array of numbers to summarize.
+ * @param {Array<Number>} array - array of numbers to summarize.
  * @return {Number} sum of elements which occupying prime-numbered indices.
  */
-export function sumPrimeIndexedElements(arr) {
+export function sumPrimeIndexedElements(array) {
   let sum = 0;
-  for (let i = 2; i < arr.length; i++) {
+  for (let i = 2; i < array.length; i++) {
     if (isPrimeNumber(i)) {
-      sum += arr[i];
+      sum += array[i];
     }
   }
   return sum;

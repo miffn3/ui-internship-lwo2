@@ -4,27 +4,20 @@
  * @example
  * //return [["G", "C"], ["C","G"],["G", "C"]]
  * pairElement("GCG");
- * @param {String} str - sequence of dnas.
+ * @param {String} sequence - sequence of DNAs.
  * @return {Array<Array<String>>} base pairs.
  */
-export function pairElement(str) {
-  const dnas = Array.from(str);
+export function pairElement(sequence) {
   const pairs = [];
-  for (let i = 0; i < dnas.length; i++) {
-    switch (dnas[i]) {
-      case ('C'):
-        pairs.push(['C', 'G']);
-        break;
-      case ('G'):
-        pairs.push(['G', 'C']);
-        break;
-      case ('A'):
-        pairs.push(['A', 'T']);
-        break;
-      case ('T'):
-        pairs.push(['T', 'A']);
-        break;
-    }
+  for (let i = 0; i < sequence.length; i++) {
+    pairs.push([sequence[i], dictionary[sequence[i]]]);
   }
   return pairs;
 }
+
+const dictionary = {
+  'C': 'G',
+  'G': 'C',
+  'A': 'T',
+  'T': 'A',
+};

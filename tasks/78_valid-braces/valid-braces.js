@@ -4,19 +4,19 @@
  * @example
  * //return true
  * validBraces("(){}[]");
- * @param {String} str - source string which contains braces.
+ * @param {String} sequenceOfBraces - source string which contains braces.
  * @return {Boolean}
  */
-export function validBraces(str) {
+export function validBraces(sequenceOfBraces) {
   const stack = [];
   const openBraces = ['(', '{', '['];
   const closeBraces = [')', '}', ']'];
-  for (let i = 0; i < str.length; i++) {
-    if (openBraces.indexOf(str[i]) !== -1) {
-      stack.push(str[i]);
-    } else if (closeBraces.indexOf(str[i]) !== -1) {
+  for (let i = 0; i < sequenceOfBraces.length; i++) {
+    if (openBraces.indexOf(sequenceOfBraces[i]) !== -1) {
+      stack.push(sequenceOfBraces[i]);
+    } else if (closeBraces.indexOf(sequenceOfBraces[i]) !== -1) {
       const indexOfLastElement = openBraces.indexOf(stack.pop());
-      if (indexOfLastElement !== closeBraces.indexOf(str[i])) {
+      if (indexOfLastElement !== closeBraces.indexOf(sequenceOfBraces[i])) {
         return false;
       }
     }

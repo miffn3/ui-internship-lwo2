@@ -4,14 +4,14 @@
  * @example
  * //return 30
  * numPrimoral(3);
- * @param {Number} num - provided number.
+ * @param {Number} number - provided number.
  * @return {Number} primoral of a number.
  */
-export function numPrimorial(num) {
+export function numPrimorial(number) {
   let count = 0;
   let result = 1;
   let i = 2;
-  while (count < num) {
+  while (count < number) {
     if (isPrimeNumber(i)) {
       result *= i;
       count++;
@@ -27,14 +27,14 @@ export function numPrimorial(num) {
  * @example
  * //return true
  * isPrimeNumber(5);
- * @param {Number} num - number provided to check.
+ * @param {Number} number - number provided to check.
  * @return {Boolean}
  */
-function isPrimeNumber(num) {
+function isPrimeNumber(number) {
   let isPrime = true;
-  const n = Math.sqrt(num);
+  const n = Math.sqrt(number);
   for (let j = 2; j <= n; j++) {
-    if (num % j === 0) {
+    if (number % j === 0) {
       isPrime = false;
       break;
     }

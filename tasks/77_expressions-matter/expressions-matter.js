@@ -11,12 +11,6 @@
  * @return {Number} maximum of possible results.
  */
 export function expressionMatter(a, b, c) {
-  const results = [];
-  results.push(eval(`${a} + ${b} + ${c}`));
-  results.push(eval(`${a} * ${b} * ${c}`));
-  results.push(eval(`(${a} + ${b}) * ${c}`));
-  results.push(eval(`${a} * (${b} + ${c})`));
-  results.push(eval(`${a} + ${b} * ${c}`));
-  results.push(eval(`${a} * ${b} + ${c}`));
-  return Math.max(...results);
+  return Math.max(a + b + c, a * b * c, a + b * c,
+      a * b + c, (a + b) * c, a * (b + c));
 }

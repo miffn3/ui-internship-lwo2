@@ -4,23 +4,35 @@
  * @example
  * //return 01010010 01100101 01100001 01101100
  * binaryEncode('Real');
- * @param {String} str - source sentence.
+ * @param {String} message - source sentence.
  * @return {String} space separated binary string.
  */
-export function binaryEncode(str) {
-  if (!str) {
+export function binaryEncode(message) {
+  if (!message) {
     return '';
   }
-  let result = str.charCodeAt(0).toString(2);
-  while (result.length < 8) {
-    result = 0 + result;
-  }
-  for (let i = 1; i < str.length; i++) {
-    let encodeChar = str.charCodeAt(i).toString(2);
-    while (encodeChar.length < 8) {
-      encodeChar = 0 + encodeChar;
-    }
-    result += ' ' + encodeChar;
+  let result = message.charCodeAt(0).toString(2);
+  result = addNotNecessaryZeroes(result);
+  for (let i = 1; i < message.length; i++) {
+    let encodeChar = message.charCodeAt(i).toString(2);
+    result += ' ' + addNotNecessaryZeroes(encodeChar);
   }
   return result;
+}
+
+/**
+ * addNotNecessaryZeroes - Adding not necessary zeroes to
+ * binary sequence of 1 byte.
+ *
+ * @example
+ * //return 00011111
+ * addNotNecessaryZeroes('11111');
+ * @param {String} binarySequence - sequence of 0 and 1.
+ * @return {String}
+ */
+function addNotNecessaryZeroes(binarySequence) {
+  while (binarySequence.length < 8) {
+    binarySequence = 0 + binarySequence;
+  }
+  return binarySequence;
 }

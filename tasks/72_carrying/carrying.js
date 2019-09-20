@@ -5,25 +5,25 @@
  * @example
  * //return 5
  * addTogether(2)(3);
- * @param  {*} a - first argument of sum.
- * @param {*} b - [optional] second argument of sum. If it haven't provided
- * then returns a function that expects one argument.
+ * @param  {*} requiredOperand - first argument of sum.
+ * @param {*} optionalOperand - [optional] second argument of sum. If it haven't
+ * provided then returns a function that expects one argument.
  * @return {*} sum of two arguments.
  */
-export function addTogether(a, b) {
-  if (typeof a !== 'number') {
+export function addTogether(requiredOperand, optionalOperand) {
+  if (typeof requiredOperand !== 'number') {
     return undefined;
   }
-  if (b === undefined) {
-    return (c) => {
-      if (typeof c !== 'number') {
+  if (optionalOperand === undefined) {
+    return (additionalOperand) => {
+      if (typeof additionalOperand !== 'number') {
         return undefined;
       }
-      return c + a;
+      return additionalOperand + requiredOperand;
     };
   }
-  if (typeof b !== 'number') {
+  if (typeof optionalOperand !== 'number') {
     return undefined;
   }
-  return a + b;
+  return requiredOperand + optionalOperand;
 }
