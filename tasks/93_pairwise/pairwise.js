@@ -11,7 +11,7 @@
  */
 export function pairwise(array, target) {
   let sum = 0;
-  const indexes = new Set;
+  const indexes = new Set();
   for (let i = 0; i < array.length; i++) {
     for (let j = 1; j < array.length; j++) {
       if (i !== j && !indexes.has(j) && !indexes.has(i)) {
