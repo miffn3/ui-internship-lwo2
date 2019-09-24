@@ -28,21 +28,21 @@ export function updateInventory(currentInventory, newInventory) {
   for (let i = 0; i < keys.length; i++) {
     updatedInventory.push([objectInventory[keys[i]], keys[i]]);
   }
-  return updatedInventory.sort(sorting);
+  return updatedInventory.sort(sortingPairs);
 }
 
 /**
- * sorting - Return -1, 0, 1 depended on lexicographical order
+ * sortingPairs - Return -1, 0, 1 depended on lexicographical order
  * of second elements of provided pairs.
  *
  * @example
  * //return -1
- * sorting([100, 'A'], [2, 'B']);
+ * sortingPairs([100, 'A'], [2, 'B']);
  * @param {Array<*>} pair1 - first pair.
  * @param {Array<*>} pair2 - second pair.
  * @return {Number}
  */
-function sorting(pair1, pair2) {
+function sortingPairs(pair1, pair2) {
   if (pair1[1] < pair2[1]) {
     return -1;
   }

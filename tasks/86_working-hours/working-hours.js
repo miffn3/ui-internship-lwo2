@@ -9,7 +9,7 @@
  */
 export function formatWorkingHours(workingDates) {
   const readableDates = [];
-  const ordedDates = workingDates.sort(sorting);
+  const ordedDates = workingDates.sort(sortingDates);
   for (let i = 1; i < ordedDates.length; i++) {
     if (ordedDates[i].from === ordedDates[i - 1].from
       && ordedDates[i].to === ordedDates[i - 1].to) {
@@ -30,17 +30,17 @@ export function formatWorkingHours(workingDates) {
 
 const weekDays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 /**
- * sorting - Compares two provided dates and returns
+ * sortingDates - Compares two provided dates and returns
  * -1, 0, 1 depended on weekday order.
  *
  * @example
  * //return 1
- * sorting({ "day": "sat" }, { "day": "mon" });
+ * sortingDates({ "day": "sat" }, { "day": "mon" });
  * @param {Object} date1 -
  * @param {Object} date2 -
  * @return {Number}
  */
-function sorting(date1, date2) {
+function sortingDates(date1, date2) {
   const weekDay1 = date1.day;
   const weekDay2 = date2.day;
   if (weekDays.indexOf(weekDay1) < weekDays.indexOf(weekDay2)) {
