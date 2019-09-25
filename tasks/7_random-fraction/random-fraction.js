@@ -1,3 +1,10 @@
 export function randomFraction() {
-  return Number(Math.random().toFixed(1));
+  let curFraction = Number(Math.random().toFixed(1));
+  while (lastFraction === curFraction) {
+    curFraction = Number(Math.random().toFixed(1));
+  }
+  lastFraction = curFraction;
+  return curFraction;
 }
+
+let lastFraction;
