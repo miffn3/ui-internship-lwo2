@@ -1,9 +1,17 @@
+/**
+ * LinkedList - Class that represents data structure.
+ */
 export class LinkedList {
   constructor() {
     this.amount = 0;
     this.head = null;
     this.tail = null;
   }
+  /**
+   * push - Add new element on the tail of linked list.
+   *
+   * @param {Number} nextValue - new element.
+   */
   push(nextValue) {
     const nextNode = {
       value: nextValue,
@@ -25,6 +33,11 @@ export class LinkedList {
     }
     this.amount++;
   }
+  /**
+   * pop - Removes and returns element on the tail of linked list.
+   *
+   * @return {Number}
+   */
   pop() {
     if (this.amount === 1) {
       const tmp = this.head;
@@ -47,6 +60,11 @@ export class LinkedList {
       return tmp.value;
     }
   }
+  /**
+   * iterate - Executes on each element of linked list.
+   *
+   * @param {Function} func - executes on each element of linked list.
+   */
   iterate(func) {
     let cur = this.head;
     for (let i = 0; i < this.amount; i++) {
@@ -54,6 +72,13 @@ export class LinkedList {
       cur = cur.next;
     }
   }
+  /**
+   * insertAfter - Inserts new value if first argument value exist.
+   *
+   * @param {Number} existValue - inserts new value after it.
+   * @param {Number} newValue - value to insert.
+   * @return {Boolean} true if succeed.
+   */
   insertAfter(existValue, newValue) {
     let neededNode;
     this.iterate((node) => {
@@ -73,6 +98,12 @@ export class LinkedList {
     neededNode.next = newNode;
     return true;
   }
+  /**
+   * removeItem - Remove element from linken list if value exist.
+   *
+   * @param {Number} existValue - element to remove.
+   * @return {Boolean} true if succeed.
+   */
   removeItem(existValue) {
     let neededNode;
     this.iterate((node) => {

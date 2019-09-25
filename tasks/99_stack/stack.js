@@ -1,8 +1,16 @@
+/**
+ * Stack - Class that represents data structure.
+ */
 export class Stack {
   constructor() {
     this.isEmpty = true;
     this.size = 0;
   }
+  /**
+   * push - Add element on top of stack.
+   *
+   * @param {Number} node - provided node value.
+   */
   push(node) {
     this.size++;
     if (this.isEmpty) {
@@ -19,6 +27,11 @@ export class Stack {
       };
     }
   }
+  /**
+   * pop - Removes and returns element on top of stack.
+   *
+   * @return {Number} - element on top of stack.
+   */
   pop() {
     if (!this.isEmpty) {
       this.size--;
