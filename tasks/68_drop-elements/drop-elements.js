@@ -10,13 +10,15 @@
  * @return {Array<*>} new array after filtering.
  */
 export function dropElements(array, filter) {
-  const copy = array.slice();
-  for (let i = 0; i < copy.length; i++) {
-    if (filter(copy[0])) {
-      break;
+  const copy = [];
+  let checker = false;
+  for (let i = 0; i < array.length; i++) {
+    if (filter(array[i])) {
+      checker = true;
     }
-    copy.shift();
-    i--;
+    if (checker) {
+      copy.push(array[i]);
+    }
   }
   return copy;
 }
