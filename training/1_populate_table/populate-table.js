@@ -5,7 +5,7 @@
  */
 export function populateTable(students) {
   // eslint-disable-next-line no-undef
-  const table = document.createElement('table');
+  const table = window.document.createElement('table');
   const properties = Object.keys(students[0]);
   const row1 = table.insertRow();
   for (let i = 0; i < properties.length; i++) {
@@ -26,5 +26,5 @@ export function populateTable(students) {
     }
   }
   // eslint-disable-next-line no-undef
-  document.body.appendChild(table);
+  window.document.body.appendChild(table);
 }
