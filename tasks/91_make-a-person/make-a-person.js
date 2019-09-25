@@ -4,27 +4,25 @@
  * @param {String} fullName - first name and last name of person.
  */
 export function Person(fullName) {
-  const name = fullName.split(' ');
-  let firstName = name[0];
-  let lastName = name[1];
+  let splittedName = fullName.split(' ');
   this.getFirstName = function() {
-    return firstName;
+    return splittedName[0];
   };
   this.getLastName = function() {
-    return lastName;
+    return splittedName[1];
   };
   this.getFullName = function() {
-    return firstName + ' ' + lastName;
+    return splittedName[0] + ' ' + splittedName[1];
   };
   this.setFirstName = function(firstNameNew) {
-    firstName = firstNameNew;
+    splittedName[0] = firstNameNew;
   };
   this.setLastName = function(lastNameNew) {
-    lastName = lastNameNew;
+    splittedName[1] = lastNameNew;
   };
-  this.setFullName= function(fullName) {
-    const name = fullName.split(' ');
-    firstName = name[0];
-    lastName = name[1];
+  this.setFullName = function(fullName) {
+    let name = fullName.split(' ');
+    splittedName[0] = name[0];
+    splittedName[1] = name[1];
   };
 }
