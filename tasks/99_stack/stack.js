@@ -39,8 +39,9 @@ export class Stack {
         this.isEmpty = true;
         return this.last.value;
       }
+      const tmp = this.last;
       this.last = this.last.prev;
-      return this.last.value;
+      return tmp.value;
     }
   }
 }
